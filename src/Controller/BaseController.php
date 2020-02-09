@@ -2,8 +2,8 @@
 
 namespace App\Controller;
 
-use App\Communication\HtmlResponse;
-use App\Communication\ResponseBodyInterface;
+use App\Communication\Response\HtmlResponse;
+use App\Communication\Response\ResponseBodyInterface;
 
 class BaseController extends AbstractController
 {

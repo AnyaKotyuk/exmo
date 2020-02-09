@@ -2,9 +2,9 @@
 
 namespace App;
 
-use App\Communication\Request;
-use App\Communication\RequestMethod;
-use App\Communication\ResponseBodyInterface;
+use App\Communication\Consts\RequestMethod;
+use App\Communication\Request\Request;
+use App\Communication\Response\ResponseBodyInterface;
 use App\Controller\AbstractController;
 use App\Exception\RouteNotFoundException;
 use App\Exception\UnsupportedMethodException;

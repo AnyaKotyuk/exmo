@@ -2,8 +2,8 @@
 
 namespace App\Controller;
 
-use App\Communication\JsonResponse;
-use App\Communication\ResponseBodyInterface;
+use App\Communication\Response\JsonResponse;
+use App\Communication\Response\ResponseBodyInterface;
 use App\Repository\UserRepository;
 use App\Exception\SourceNotFoundException;
 

@@ -5,9 +5,9 @@ use App\Service\AuthorizeService;
 use App\Exception\NotAuthorizedException;
 use App\Exception\BadRequestException;
 use App\Exception\NotFoundException;
-use App\Communication\ErrorJsonResponse;
-use App\Communication\StatusCode;
-use App\Communication\Request;
+use App\Communication\Response\ErrorJsonResponse;
+use App\Communication\Consts\StatusCode;
+use App\Communication\Request\Request;
 
 require_once 'autoload.php';
 

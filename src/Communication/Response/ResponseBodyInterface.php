@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Communication;
+namespace App\Communication\Response;
 
 interface ResponseBodyInterface
 {
