@@ -5,13 +5,16 @@ namespace App\Controller;
 use App\Communication\JsonResponse;
 use App\Communication\ResponseBodyInterface;
 use App\Repository\UserRepository;
+use App\Exception\SourceNotFoundException;
 
 class UsersController extends AbstractController
 {
     /**
+     * Get all users or user by {id}
+     *
      * @param int|null $id
      * @return ResponseBodyInterface
-     * @throws \App\Exception\SourceNotFoundException
+     * @throws SourceNotFoundException
      */
     public function index(?int $id): ResponseBodyInterface
     {
@@ -24,7 +27,7 @@ class UsersController extends AbstractController
         }
 
         $response = new JsonResponse();
-        $response->setBody(json_encode($result));
+        $response->setBody(json_encode($result)); // TODO: create rest entity for correct resource representation
 
         return $response;
     }

@@ -2,9 +2,9 @@
 
 namespace App\Entity;
 
-use App\Enum\GenderEnum;
 use DateTimeInterface;
 
+// TODO: make properties private after creating Rest user representation
 class User
 {
     /** @var int $id */
@@ -13,8 +13,8 @@ class User
     /** @var string $name */
     public $name;
 
-    /** @var GenderEnum|null $gender */
-    public $gender;
+    /** @var string|null $gender */
+    public $gender; // TODO: set as Enum
 
     /** @var DateTimeInterface|null $birthdate */
     public $birthdate;
@@ -42,12 +42,12 @@ class User
         $this->name = $name;
     }
 
-    public function getGender(): ?GenderEnum
+    public function getGender(): ?string
     {
         return $this->gender;
     }
 
-    public function setGender(GenderEnum $gender): void
+    public function setGender(string $gender): void
     {
         $this->gender = $gender;
     }
@@ -70,15 +70,5 @@ class User
     public function setAddress(string $address): void
     {
         $this->address = $address;
-    }
-
-    public function __set($name, $value)
-    {
-        return;
-    }
-
-    public function __get($name)
-    {
-        return;
     }
 }

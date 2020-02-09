@@ -2,6 +2,8 @@
 
 namespace App;
 
+use App\Communication\Request;
+use App\Communication\RequestMethod;
 use App\Communication\ResponseBodyInterface;
 use App\Controller\AbstractController;
 use App\Exception\RouteNotFoundException;
@@ -13,8 +15,6 @@ class Routing
     private const DEFAULT_GET_ACTION = 'index';
     private const CONTROLLER_SUFFIX = 'Controller';
     private const CONTROLLER_NAMESPACE = 'App\Controller';
-
-    private const GET_METHOD = 'GET';
 
     /**
      * Get response for requested url
@@ -66,7 +66,7 @@ class Routing
     private function getMethodName(?string $methodName): string
     {
         if (!$methodName || is_numeric($methodName)) {
-            if ($_SERVER['REQUEST_METHOD'] === self::GET_METHOD) {
+            if (Request::getRequestMethod() === RequestMethod::GET) {
                 $methodName = self::DEFAULT_GET_ACTION; // TODO: move to separate consts
             } else {
                 throw new UnsupportedMethodException($_SERVER['REQUEST_METHOD']);

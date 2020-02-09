@@ -3,14 +3,15 @@
 namespace App\Repository;
 
 use App\Entity\User;
-use App\Enum\GenderEnum;
-use App\Exception\RouteNotFoundException;
+use App\Enum\GenderConst;
 use App\Exception\SourceNotFoundException;
 use DateTime;
 
 class UserRepository
 {
     /**
+     * Get all users
+     *
      * @return User[]
      */
     public function userList(): array
@@ -18,20 +19,20 @@ class UserRepository
         $firstUser = new User();
         $firstUser->setId(1);
         $firstUser->setName('John');
-        $firstUser->setGender(new GenderEnum(GenderEnum::MALE));
-        $firstUser->setBirthdate(new \DateTime('1967-02-04'));
+        $firstUser->setGender(GenderConst::MALE);
+        $firstUser->setBirthdate(new DateTime('1967-02-04'));
 
         $secondUser = new User();
         $secondUser->setId(2);
         $secondUser->setName('Nick');
-        $secondUser->setGender(new GenderEnum(GenderEnum::MALE));
-        $secondUser->setBirthdate(new \DateTime('1969-09-07'));
+        $secondUser->setGender(GenderConst::MALE);
+        $secondUser->setBirthdate(new DateTime('1969-09-07'));
         $secondUser->setAddress('Neuthorn street');
 
         $thirdUser = new User();
         $thirdUser->setId(3);
         $thirdUser->setName('Juli');
-        $thirdUser->setGender(new GenderEnum(GenderEnum::FEMALE));
+        $thirdUser->setGender(GenderConst::FEMALE);
         $thirdUser->setAddress('Grouth street');
 
         return [

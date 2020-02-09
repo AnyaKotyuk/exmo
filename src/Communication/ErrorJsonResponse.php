@@ -2,7 +2,7 @@
 
 namespace App\Communication;
 
-class ErrorResponse extends JsonResponse
+class ErrorJsonResponse extends JsonResponse
 {
     /** @var string $errorMsg */
     private $errorMsg;

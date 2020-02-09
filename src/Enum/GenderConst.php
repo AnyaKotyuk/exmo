@@ -2,7 +2,7 @@
 
 namespace App\Enum;
 
-class GenderEnum extends AbstractEnum
+class GenderConst
 {
     public const MALE = 'Male';
     public const FEMALE = 'Female';
