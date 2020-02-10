@@ -9,4 +9,5 @@ password: superpassword
   <li>GET /users/{id}</li>
 </ul>
 
+Tested at php -v 7.3
 

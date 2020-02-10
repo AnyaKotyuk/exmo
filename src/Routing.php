@@ -40,9 +40,9 @@ class Routing
 
         $id = null;
         if ($method == self::DEFAULT_GET_ACTION) {
-            $id = $pathList[1];
+            $id = $pathList[1] ?? null;
         } else {
-            $id = $pathList[2];
+            $id = $pathList[2] ?? null;
         }
 
         return $controller->$method($id);
